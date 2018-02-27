@@ -67,8 +67,7 @@ $app->get('/room/:name', 'cors', function($name) use ($app) {
     if ($app->storage->exists($name)) {
 
         // fetch the sessionId from local storage
-        // $app->sessionId = $app->storage[$name];
-        $app->sessionId = '2_MX40NjA2NzQ4Mn5-MTUxOTc0MzcxMzIxMH5kdER1cVVOUXlpUGNSWDBsZmg2QXNqSS9-UH4';
+        $app->sessionId = $app->storage[$name];
 
         // generate token
         $token = $app->opentok->generateToken($app->sessionId);
